@@ -195,13 +195,13 @@ nav {
 .quote {
     font-family: 'Cormorant', serif;
     font-style: italic;
-    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 1.5;
 }
 
 
 .quote-container {
-    padding-top: 80px;
+    padding-top: 5rem;
 }
 
 
@@ -713,8 +713,6 @@ textarea {
 
 
     .quote {
-        font-family: 'Cormorant', serif;
-        font-style: italic;
         font-size: 1.125rem;
         line-height: 1.2;
     }
@@ -722,6 +720,16 @@ textarea {
     
     .quote-container {
         padding-top: 4rem;
+    }
+
+
+    .author {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        width: 25%;
+        line-height: 1.2;
+        background-color: #da8fa81f;
+        border-radius: 5px;
     }
 
 
