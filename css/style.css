@@ -751,6 +751,26 @@ textarea {
         animation: leave 8s ease-in-out infinite;
         z-index: -1;
     }
+
+
+    .gallery {
+        padding-top: 3rem;
+        grid-gap: 1.2rem;
+    }
+
+    .item2 {
+        margin-bottom: 1.2rem;
+    }
+
+
+    .gallery a {
+        margin-top: 3rem;
+    }
+    
+    
+    .gallery a span {
+        font-size: 0.8rem;
+    }
 }
 
 
