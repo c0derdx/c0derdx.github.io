@@ -12,6 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
+a {
+    color: black;
+}
+
 
 a:hover {
     text-decoration: none;
@@ -42,7 +46,7 @@ nav {
     height: 60px;
     background-color: #fffafb;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 11;
 }
 
@@ -51,7 +55,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 60px;
     width: 100vw;
     max-width: 1280px;
     margin: auto;
@@ -223,6 +227,7 @@ nav {
     animation: leave 5s ease-in-out infinite;
     transform: rotate(-45deg);
     z-index: -1;
+    display: none;
 }
 
 
@@ -252,7 +257,7 @@ nav {
 .gallery {
     padding-top: 6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(350px , 1fr));
+    grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
     align-items: center;
     grid-gap: 10px;
 }
@@ -312,7 +317,7 @@ nav {
 .services-container {
     padding-top: 6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
 }
 
 
@@ -322,16 +327,19 @@ nav {
 
 
 .services-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
 .services-photo {
     width: 100%;
-    height: 400px;
+    height: 100%;
     position: relative;
-    opacity: 0.8;
+    opacity: 1;
+    object-fit: fill;
 }
 
 
@@ -340,12 +348,10 @@ nav {
 }
 
 
-.service-ceremony-container div {
-    background-image: linear-gradient(to right, #dd5e89, #f7bb97);
-}
-
-
-#service-ceremony-container {
+.services-image-container {
+    width: 212px;
+    height: 400px;
+    margin: 10px;
     position: relative;
 }
 
@@ -366,13 +372,6 @@ nav {
 }
 
 
-
-
-#service-catering-container {
-    position: relative;
-}
-
-
 .service-title-catering {
     position: absolute;
     text-align: center;
@@ -382,15 +381,11 @@ nav {
     background-image: linear-gradient(to right, #dd5e89, #f7bb97);
     z-index: 1;
     width: 100%;
+    padding: 1rem;
     padding: 1rem 25%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-
-#service-photo-container {
-    position: relative;
 }
 
 
@@ -423,16 +418,10 @@ nav {
 }
 
 
-.services-photo::after {
-    content: "";
-    position: absolute;
-}
-
-
 .about-container {
     padding-top: 6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     grid-gap: 20px;
 }
 
@@ -526,8 +515,7 @@ ol.carousel-indicators li.active {
 
 .carousel-item .profile-brief {
     width: 60%;
-    margin-left: 5px;
-    align-self: center;
+    margin-left: 0px;
 }
 
 
@@ -638,6 +626,22 @@ textarea {
 }
 
 
+footer {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fffafb;
+}
+
+
+footer ul li a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
 .leaves-group {
     position: absolute;
     z-index: -1;
@@ -651,7 +655,7 @@ textarea {
 .bubble {
     position: absolute;
     z-index: -1;
-    bottom: -1%;
+    bottom: 20vh;
     left: -10%;
     animation: leave 5s ease-in-out infinite;
     width: 40%;
@@ -691,9 +695,9 @@ textarea {
     }
 
 
-    p {
-        margin: 0 0 0 0.6rem;
-    }
+    /* p {
+        margin: 0.6rem 0 0 0;
+    } */
 
 
     .text-content {
@@ -740,6 +744,7 @@ textarea {
         animation: leave 5s ease-in-out infinite;
         transform: rotate(-45deg);
         z-index: -1;
+        display: none;
     }
 
 
@@ -754,7 +759,7 @@ textarea {
 
 
     .gallery {
-        padding-top: 3rem;
+        padding-top: 4rem;
         grid-gap: 1.2rem;
     }
 
@@ -770,6 +775,22 @@ textarea {
     
     .gallery a span {
         font-size: 0.8rem;
+    }
+
+
+    .services-container {
+        padding-top: 4rem;
+    }
+
+
+    .contact-img {
+        display: none;
+    }
+
+
+    .bubble {
+        width: 95%;
+        bottom: 5vh;
     }
 }
 
@@ -817,5 +838,18 @@ textarea {
 
     .nav-mobile ul li {
         margin: 20px 0px 20px 20px; 
+    }
+
+
+    @media only screen and (max-width: 730px) {
+        .hamburger {
+            display: block;
+        }
+    
+    
+        .right {
+            display: none;
+        }
+        
     }
 }
