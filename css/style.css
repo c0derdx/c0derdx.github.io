@@ -217,7 +217,7 @@ nav {
 
 .leave1 {
     position: absolute;
-    right: -5%;
+    right: 15%;
     top: 50vh;
     animation: leave 5s ease-in-out infinite;
     transform: rotate(-45deg);
