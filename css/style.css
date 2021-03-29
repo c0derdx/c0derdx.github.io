@@ -677,7 +677,7 @@ footer ul li a:hover {
     /* top: 60px; */
     left: -100vw;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     cursor: not-allowed;
     z-index: 100;
     transition: all ease-in-out 0.5s;
