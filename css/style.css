@@ -132,11 +132,6 @@ nav {
 }
 
 
-.links a.active::before {
-    width: 100%;
-}
-
-
 .links a:hover::before {
     width: 100%;
     transition: all 0.5s;
@@ -227,7 +222,7 @@ nav {
     animation: leave 5s ease-in-out infinite;
     transform: rotate(-45deg);
     z-index: -1;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -299,10 +294,10 @@ nav {
 
 .gallery a {
     display: block;
-    width: 15%;
-    border-radius: 5px;
     margin-top: 80px;
-    background-color: #da8fa81f;
+    width: 15%;
+    line-height: 1.5;
+    background-image: linear-gradient(to right, #f39fbb, transparent );
 }
 
 
@@ -426,13 +421,16 @@ nav {
 }
 
 
-.about-column1,
 .about-column2 {
     overflow: hidden;
 }
 
+.about-column1 {
+position: relative;
+}
 
-.about-column1 img {
+
+.column1-intro-img {
     width: 28%;
 }
 
@@ -537,7 +535,7 @@ ol.carousel-indicators li.active {
 .contact-container {
     padding-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     grid-column-gap: 10px;
     width: 100%;
 }
@@ -647,9 +645,9 @@ footer ul li a:hover {
 .leaves-group {
     position: absolute;
     z-index: -1;
-    left: 12%;
-    top: 41.5%;
-    width: 15%;
+    left: 0;
+    top: 0%;
+    width: 45%;
     animation: leave 5s ease-in-out infinite;
 }
 
@@ -672,10 +670,94 @@ footer ul li a:hover {
 
 
 
+
 .nav-mobile {
+    display: flex;
+    position: fixed;
+    /* top: 60px; */
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    cursor: not-allowed;
+    z-index: 100;
+    transition: all ease-in-out 0.5s;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
     display: none;
 }
 
+
+.toggleNav {
+    left: 0;
+}
+
+
+.nav-mobile-links {
+    width: 70vw;
+    background-color: #fffafb;
+}
+
+
+.close-btn {
+    width: 30vw;
+    cursor: pointer;
+    margin-top: 0.2rem;
+}
+
+
+.close-btn img {
+    width: 2rem;
+}
+
+
+
+
+.nav-mobile-links ul {
+    /* position: absolute; */
+    /* left: -60vh; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-mobile ul li {
+    margin: 20px 0px 20px 20px; 
+}
+
+.mobile-links {
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+
+.mobile-links a {
+    color: #707070;
+    position: relative;
+}
+
+
+.mobile-links a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    top: 100%;
+    left: 0;
+    background-color: #707070;
+    height: 2px;
+}
+
+
+.mobile-links a.active::before {
+    width: 100%;
+}
+
+
+.mobile-links a:hover::before {
+    width: 100%;
+    transition: all 0.5s;
+}
 
 @media only screen and (max-width: 480px) {
 
@@ -784,73 +866,46 @@ footer ul li a:hover {
     }
 
 
-    .contact-img {
-        display: none;
-    }
-
-
-    .bubble {
-        width: 95%;
-        bottom: 5vh;
-    }
+    
+    
 }
 
 
 
 @media only screen and (max-width: 660px) {
-
+    
     .navbar {
         align-items: unset;
         justify-content: unset;
     }
+    
 
-    .nav-mobile {
-        display: flex;
-        position: absolute;
-        /* top: 60px; */
-        left: 0;
-        left: -100vw;
-        width: 100vw;
-        height: 100%;
-        z-index: 100;
-    }
+    
+}
 
-
-    .nav-mobile-links {
-        width: 70vw;
-        background-color: #fffafb;
-    }
-
-
-    .close-btn {
-        width: 30vw;
-    }
-
-
-
-
-    .nav-mobile-links ul {
-        /* position: absolute; */
-        /* left: -60vh; */
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav-mobile ul li {
-        margin: 20px 0px 20px 20px; 
-    }
-
-
-    @media only screen and (max-width: 730px) {
+@media only screen and (max-width: 740px) {
         .hamburger {
             display: block;
         }
-    
-    
-        .right {
+
+        .nav-mobile {
+            display: flex;
+        }
+        
+        .contact-img {
             display: none;
         }
         
+        .bubble {
+            width: 95%;
+            bottom: 20vh;
+        }
+        .right {
+            display: none;
+        }
+
+        .author {
+            width: 25%;
+        }
+        
     }
-}
