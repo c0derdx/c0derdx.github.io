@@ -222,7 +222,7 @@ nav {
     animation: leave 5s ease-in-out infinite;
     transform: rotate(-45deg);
     z-index: -1;
-    /* display: none; */
+    display: none;
 }
 
 
